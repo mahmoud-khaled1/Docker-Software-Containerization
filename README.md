@@ -64,3 +64,6 @@ iii. Docker Registries
 A stateless, highly scalable server-side application, which stores and lets us distribute Docker images is what we call the Registry. There is a flexibility that either we can create our own image or we can use public registries such as Docker Hub and Docker Cloud.
 By default, Docker is configured to look for images on one of its public registries “Docker Hub”. One of the advantages it offers is we can create our own registry as well.
 Hence, while we run the docker pull or docker run command, it is possible to pull the required images from our configured registry. Basically, our image is pushed to our configured registry, while we use the docker push command.
+
+### Docker Cheat Sheet All the Most Essential Commands in One Place 
+ <a href="[https://github.com/Murad9288](https://www.hostinger.com/tutorials/docker-cheat-sheet?ppc_campaign=google_search_generic_hosting_all&bidkw=defaultkeyword&lo=9112325&gclid=CjwKCAjw3dCnBhBCEiwAVvLcuzmIox6oPrZPQEQpo0MD9FV16uYT5SQYQSANyLWF_lzJDrJGUZoAhhoC1AoQAvD_BwE)https://www.hostinger.com/tutorials/docker-cheat-sheet?ppc_campaign=google_search_generic_hosting_all&bidkw=defaultkeyword&lo=9112325&gclid=CjwKCAjw3dCnBhBCEiwAVvLcuzmIox6oPrZPQEQpo0MD9FV16uYT5SQYQSANyLWF_lzJDrJGUZoAhhoC1AoQAvD_BwE" target="_blank"> Link </a>
