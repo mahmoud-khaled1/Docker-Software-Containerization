@@ -70,7 +70,7 @@ Hence, while we run the docker pull or docker run command, it is possible to pul
 ### Show commands & management commands
 
 ```
-$ docker
+ docker
 ```
 
 ### Docker version info
