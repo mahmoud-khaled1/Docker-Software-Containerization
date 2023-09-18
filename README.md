@@ -109,6 +109,11 @@ Purpose of volume in Dockerfile :- <br />
 ```
   docker container run -d -p 80:80 nginx
 ```
+### Create and run a container redis with a specific version alpine in the background
+
+```
+  docker container run -d -p 80:80 redis:alpine
+```
 
 ### Naming Containers
 
