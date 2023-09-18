@@ -98,19 +98,13 @@ Purpose of volume in Dockerfile :- <br />
 
 # WORKING WITH CONTAINERS
 
-### Create an run a container in foreground
+### Create and run a container in foreground
 
 ```
   docker container run -it -p 80:80 nginx
 ```
 
-### Create an run a container in background
-
-```
-  docker container run -d -p 80:80 nginx
-```
-
-### Shorthand
+### Create and run a container in the background
 
 ```
   docker container run -d -p 80:80 nginx
@@ -124,8 +118,8 @@ Purpose of volume in Dockerfile :- <br />
 
 ### TIP: WHAT RUN DID
 
-- Looked for image called nginx in image cache
-- If not found in cache, it looks to the default image repo on Dockerhub
+- Looked for an image called nginx in the image cache
+- If not found in the cache, it looks to the default image repo on Dockerhub
 - Pulled it down (latest version), stored in the image cache
 - Started it in a new container
 - We specified to take port 80- on the host and forward to port 80 on the container
@@ -153,7 +147,7 @@ OR
 ### Stop container
 
 ```
-  docker container stop [ID]
+  docker container stop [Container ID]
 ```
 
 ### Stop all running containers
@@ -165,13 +159,13 @@ OR
 ### Remove container (Can not remove running containers, must stop first)
 
 ```
-  docker container rm [ID]
+  docker container rm [Container ID]
 ```
 
 ### To remove a running container use force(-f)
 
 ```
-  docker container rm -f [ID]
+  docker container rm -f [Container ID]
 ```
 
 ### Remove multiple containers
@@ -192,7 +186,7 @@ OR
   docker container logs [NAME]
 ```
 
-### List processes running in container
+### List processes running in the container
 
 ```
   docker container top [NAME]
@@ -200,7 +194,7 @@ OR
 
 #### TIP: ABOUT CONTAINERS
 
-Docker containers are often compared to virtual machines but they are actually just processes running on your host os. In Windows/Mac, Docker runs in a mini-VM so to see the processes youll need to connect directly to that. On Linux however you can run "ps aux" and see the processes directly
+Docker containers are often compared to virtual machines but they are actually just processes running on your host OS. In Windows/Mac, Docker runs in a mini-VM so to see the processes you'll need to connect directly to that. On Linux however, you can run "ps aux" and see the processes directly
 
 # IMAGE COMMANDS
 
@@ -230,9 +224,9 @@ Docker containers are often compared to virtual machines but they are actually j
 
 #### TIP: ABOUT IMAGES
 
-- Images are app bianaries and dependencies with meta data about the image data and how to run the image
-- Images are no a complete OS. No kernel, kernel modules (drivers)
-- Host provides the kernel, big difference between VM
+- Images are app binaries and dependencies with metadata about the image data and how to run the image
+- Images are not a complete OS. No kernel, kernel modules (drivers)
+- Host provides the kernel, a big difference between VM
 
 ### Some sample container creation
 
@@ -274,7 +268,7 @@ MYSQL:
   docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [NAME]
 ```
 
-### Performance stats (cpu, mem, network, disk, etc)
+### Performance stats (CPU, mem, network, disk, etc)
 
 ```
   docker container stats [NAME]
@@ -282,7 +276,7 @@ MYSQL:
 
 ## ACCESSING CONTAINERS
 
-### Create new nginx container and bash into
+### Create a new nginx container and bash into
 
 ```
   docker container run -it --name [NAME] nginx bash
@@ -305,7 +299,7 @@ MYSQL:
 
 **(no bash because ubuntu uses bash by default)**
 
-### You can also make it so when you exit the container does not stay by using the -rm flag
+### You can also make it so that when you exit the container does not stay by using the -rm flag
 
 ```
   docker container run --rm -it --name [NAME] ubuntu
@@ -361,19 +355,19 @@ MYSQL:
   docker network create [NETWORK_NAME]
 ```
 
-### Create container on network
+### Create a container on the network
 
 ```
   docker container run -d --name [NAME] --network [NETWORK_NAME] nginx
 ```
 
-### Connect existing container to network
+### Connect an existing container to network
 
 ```
   docker network connect [NETWORK_NAME] [CONTAINER_NAME]
 ```
 
-### Disconnect container from network
+### Disconnect container from a network
 
 ```
   docker network disconnect [NETWORK_NAME] [CONTAINER_NAME]
@@ -387,13 +381,13 @@ MYSQL:
 
 # IMAGE TAGGING & PUSHING TO DOCKERHUB
 
-# tags are labels that point ot an image ID
+# tags are labels that point to an image ID
 
 ```
   docker image ls
 ```
 
-Youll see that each image has a tag
+You see that each image has a tag
 
 ### Retag existing image
 
@@ -401,7 +395,7 @@ Youll see that each image has a tag
   docker image tag nginx btraversy/nginx
 ```
 
-### Upload to dockerhub
+### Upload to docker hub
 
 ```
   docker image push bradtraversy/nginx
@@ -413,7 +407,7 @@ Youll see that each image has a tag
   docker login
 ```
 
-### Add tag to new image
+### Add tag to a new image
 
 ```
   docker image tag bradtraversy/nginx bradtraversy/nginx:testing
@@ -493,7 +487,7 @@ COPY index.html index.html
   docker volume prune
 ```
 
-### Pull down mysql image to test
+### Pull down MySQL image to test
 
 ```
   docker pull mysql
@@ -537,7 +531,7 @@ COPY index.html index.html
   docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql
 ```
 
-### Inspect new named volume
+### Inspect the new named volume
 
 ```
 docker volume inspect mysql-db
@@ -545,7 +539,7 @@ docker volume inspect mysql-db
 
 # BIND MOUNTS
 
-- Can not use in Dockerfile, specified at run time (uses -v as well)
+- Can not be used in Dockerfile, specified at run time (uses -v as well)
 - ... run -v /Users/brad/stuff:/path/container (mac/linux)
 - ... run -v //c/Users/brad/stuff:/path/container (windows)
 
@@ -608,7 +602,7 @@ services:
 docker-compose up
 ```
 
-### You can run in background with
+### You can run in the background with
 
 ```
 docker-compose up -d
